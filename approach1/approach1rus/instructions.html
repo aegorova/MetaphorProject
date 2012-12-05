@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>Инструкция:</h1>
+<br>
+Метафорические выражения описывают одно понятие терминами другого. <br>
+Например, рассмотрим следующее выражение: "Доход корпорации оказался выше, чем планировалось".  <br>
+Основное внимание в этом предложении уделяется количеству дохода корпорации. Однако, количество описано метафорически – в терминах вертикальной проекции.  <br>
+Далее, дается ряд выражений. В каждом из них необходимо выбрать метафору, которая используется в данном выражении.  <br>
+<br>
+Пожалуйста, внимательно прочитайте каждый вопрос перед тем, как отвечать. Нажмите "Продолжить", чтобы начать!     
+<br>
+</div>
+
+<center><input type="button" value="Продолжить"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach1/approach1rus/rus_surveypage.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>

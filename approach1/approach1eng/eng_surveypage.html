@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="variables1eng.js" type="text/javascript"></script>
+<script>
+var n = 0;
+var radios = ["0","1","2","3"];
+var correct = "";
+var related = "";
+var unrelated1 = "";
+var unrelated2 = "";
+
+function val(id)
+{
+	if (document.getElementById(id) == null){alert(id);}
+	else{return document.getElementById(id).value;}
+}
+
+function on_selection1(button){document.getElementById("bifluent").value == button.value;}
+
+function on_selection2(button){document.getElementById("econ_status").value == button.value;}
+
+function checkInput(id){
+	if ((document.getElementById("gender").value == "")
+	|| (document.getElementById("age").value == "")
+	|| (document.getElementById("language").value == "")
+	|| (document.getElementById("yrs_spoken").value == "")
+	|| (document.getElementById("bilingual").value == "")
+	|| (document.getElementById("nationality").value == "")
+	|| (document.getElementById("politics").value == "")
+	|| (document.getElementById("nativeparents").value == "")
+	|| (document.getElementById("bornhere").value == "")
+	|| (document.getElementById("livein").value == "")
+	|| (document.getElementById("yrs_in_country").value == "")
+	|| (document.getElementById("ethnicity").value == "")
+	|| (document.getElementById("religion").value == "")
+	|| (document.getElementById("occupation").value == "")
+	|| (document.getElementById("education").value == "")){alert("Part of the form has not been filled out, please double check all the questions and finish");}
+	else {
+       	document.getElementById('mturk_form').submit();
+		}
+}
+
+function gup( name )
+{
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp( regexS );
+	var results = regex.exec( window.location.href );
+	if( results == null )
+	  return "";
+	else
+	  return results[1];
+}
+
+Array.prototype.shuffle = function() {
+	var s = [];
+	while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
+	while (s.length) this.push(s.pop());
+	return this;
+}
+
+function checked(button){
+	 if (button.checked == true && button.name == "correct") {
+	      correct = 1;
+	      unrelated1 = 0;
+	      unrelated2 = 0;
+	      related = 0;
+	  }
+	 if (button.checked == true && button.name == "related") {
+	      correct = 0;
+	      unrelated1 = 0;
+	      unrelated2 = 0;
+	      related = 1;
+	  }
+	 if (button.checked == true && button.name == "unrelated1") {
+	      correct = 0;
+	      unrelated1 = 1;
+	      unrelated2 = 0;
+	      related = 0;
+	  }
+	 if (button.checked == true && button.name == "unrelated2") {
+	      correct = 0;
+	      unrelated1 = 0;
+	      unrelated2 = 1;
+	      related = 0;
+	  }
+}
+
+function on_timeout(button) {
+	document.getElementById("assignmentId").value = gup("assignmentId");
+	checked(button);
+	button.checked = false;
+	document.getElementById("results").value +=
+	uniqueId[index[n]]+","+underlying_metaphor[index[n]]+","+correct+","+related+","+unrelated1+","+unrelated2+";"+ "\n";
+	n++;
+    if (n>= (index.length)) {
+    	document.getElementById("demographic").style.display  = "block";
+    	document.getElementById("survey").style.display  = "none";
+    }
+    else {;
+   		radios.sort(function() {return 0.5 - Math.random()});
+     	document.getElementById("sentence").innerHTML = critical_sentense[index[n]];
+   		document.getElementById("framing").innerHTML = question_frame[index[n]];
+   		document.getElementById("r" + radios[0]).name = "correct";
+        document.getElementById("r" + radios[0]).value = correct_answers[index[n]];
+   		document.getElementById("lbl" + radios[0]).innerHTML = correct_answers[index[n]];
+   		document.getElementById("r" + radios[1]).name = "related";
+        document.getElementById("r" + radios[1]).value = related_answers[index[n]];
+   		document.getElementById("lbl" + radios[1]).innerHTML = related_answers[index[n]];
+   		document.getElementById("r" + radios[2]).name = "unrelated1"; 
+        document.getElementById("r" + radios[2]).value = unrelated_answers1[index[n]];
+   		document.getElementById("lbl" + radios[2]).innerHTML = unrelated_answers1[index[n]];
+   		document.getElementById("r" + radios[3]).name = "unrelated2"; 
+        document.getElementById("r" + radios[3]).value = unrelated_answers2[index[n]];
+   		document.getElementById("lbl" + radios[3]).innerHTML = unrelated_answers2[index[n]];
+    }        
+}
+
+function on_selection(button) {
+    setTimeout(function(){ on_timeout(button) ;}, 250);
+}
+
+</script>
+<style type="text/css">
+#demographic
+{
+	border: solid;
+}
+#survey
+{
+	border: solid;
+}
+</style>
+
+<body onload = "addLoadEvent(function(){})">
+<form id="mturk_form" method="POST" accept-charset="UTF-8" action="">
+<input type="hidden" id="assignmentId" name="assignmentId" value="">
+<input type="hidden" id="results" name="results" value="">
+
+<div id="demographic" >
+<h1>PLEASE ANSWER THE FOLLOWING QUESTIONS BEFORE PROCEEDING</h1>
+<br>
+1. What is your age?<br>
+<input id="age" type="text" name="age" value="" /><br />
+<br>
+2. What is your gender?
+<select id="gender" name ="gender">
+	<option value="">Select one</option>
+  	<option value="male">Male</option>
+  	<option value="female">Female</option>
+</select><br>
+<br>
+3. What is your native language?
+<select id="language" name ="language">
+	<option value="">Select one</option>
+	<option value="english">English</option>
+	<option value="other">Other</option>
+</select><br>
+<br>
+4. For how many years have you spoken the language in question &#35;3?<br>
+<input id="yrs_spoken" type="text" name="yrs_spoken" value="" /><br />
+<br>
+5. Are you bilingual? 
+<select id="bilingual" name ="bilingual">
+	<option value="">Select one</option>
+  	<option value="y">Yes</option>
+  	<option value="n">No</option>
+</select><br>
+<br>
+6. How fluent are you at reading, writing, and speaking your second language?<br>
+&#40;with 1 &#61; not fluent at all and 5 &#61; native level of fluency&#41;<br>
+<input id="bifluent" type="radio" name="bifluent" value="1" onclick = "on_selection1(this)">1&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="2" onclick = "on_selection1(this)">2&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="3" onclick = "on_selection1(this)">3&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="4" onclick = "on_selection1(this)">4&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="5" onclick = "on_selection1(this)">5<br>
+<br>
+7. What is your nationality?<br>
+<select id="nationality" name ="nationality">
+	<option value="">Select one</option>
+	<option value="us">American</option>
+	<option value="other">Other</option>
+</select><br>
+<br>
+8. What is your political affiliation?<br>
+<select id ="politics" name ="politics">
+	<option value="">Select one</option>
+	<option value="democrat">Democratic Party</option>
+	<option value="republican">Republican Party</option>
+	<option value="libertarian">Libertarian Party</option>
+	<option value="green">Green Party</option>
+	<option value="constitution">Constitution Party</option>
+	<option value="other">Other</option>
+</select><br>
+<br>
+9. Were your parents born in the U.S.?<br>
+<select id ="nativeparents" name ="nativeparents">
+	<option value="">Select one</option>
+  	<option value="y">Yes</option>
+  	<option value="n">No</option>
+</select><br>
+<br>
+10. Were you born in U.S.?<br>
+<select id="bornhere" name ="bornhere">
+	<option value="">Select one</option>
+  	<option value="y">Yes</option>
+  	<option value="n">No</option>
+</select><br>
+<br>
+11. Where do you currently live?<br>
+<select id="livein" name ="livein">
+	<option value="">Select one</option>
+  	<option value="usa">USA</option>
+  	<option value="other">Other</option>
+</select><br>
+<br>
+12. For how many years have you lived in your current country?<br>
+<input id="yrs_in_country" type="text" name="yrs_in_country" value="" /><br />
+<br>
+13. What is your ethnicity?<br>
+<select id ="ethnicity" name ="ethnicity">
+	<option value="">Select one</option>
+	<option value="white">White American</option>
+	<option value="black">Black American</option>
+	<option value="asian">Asian American</option>
+	<option value="hispanic">Hispanic and Latino Americans</option>
+	<option value="other">Other</option>
+</select><br>
+<br>
+14. What is your religious background?<br>
+<select id ="religion" name ="religion">
+	<option value="">Select one</option>
+	<option value="christianity">Christianity</option>
+	<option value="islam">Islam</option>
+	<option value="judaism">Judaism</option>
+	<option value="buddhism">Buddhism</option>
+	<option value="agnostism">Agnostism</option>	
+	<option value="atheism">Atheism</option>	
+	<option value="other">Other</option>
+</select><br>
+<br>
+15. How would you rank your economic status compared to other people?<br>
+&#40;with 1 &#61; much lower than most and 5 &#61; much higher than most people&#41;<br>
+<input id= "econ_status" type="radio" name="econ_status" value="1" onclick = "on_selection2(this)">1&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="2" onclick = "on_selection2(this)">2&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="3" onclick = "on_selection2(this)">3&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="4" onclick = "on_selection2(this)">4&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="5" onclick = "on_selection2(this)">5<br>
+<br>
+16. What is your occupation?<br>
+<input id="occupation" type="text" name="occupation" value="" /><br />
+<br>
+17. What is your level of education?
+<select id="education" name ="education">
+	<option value="">Select one</option>
+	<option value="none">No formal education</option>
+	<option value="elementary">Elementary education</option>
+	<option value="secondary">Secondary education</option>
+	<option value="college">Some College</option>
+	<option value="BA/BS">Bachelors degree</option>
+	<option value="graduate">Graduate degree &#40;example&#58; M.S., Ph.D.&#41;</option>
+	<option value="other">Other</option>
+</select><br>
+<br>
+<center><input type="button" value="Accept" onclick="checkInput('demographic')"></center>
+</div>
+
+<center>
+<div id="survey" style="outline:#000 thin solid; display:table-cell; height:200px; width:450px; text-align:left">
+	<label id="sentence">&nbsp;</label>
+	<br>
+	<label id="framing">&nbsp;</label>
+	<br>
+	<br>
+	
+	<input type="radio" id="r0" onclick = "on_selection(this)" name="" value=""/>
+	<label for="r0" id="lbl0">&nbsp;</label>
+	<br>
+	<input type="radio" id="r1" onclick = "on_selection(this)" name="" value=""/>
+	<label for="r1" id="lbl1">&nbsp;</label>
+	<br>
+	<input type="radio" id="r2" onclick = "on_selection(this)" name="" value=""/>
+	<label for="r2" id="lbl2">&nbsp;</label>
+	<br>
+	<input type="radio" id="r3" onclick = "on_selection(this)" name="" value=""/>
+	<label for="r3" id="lbl3">&nbsp;</label>
+</div>
+</center>
+
+</form>
+</body>
+
+<script>
+index.shuffle();
+document.getElementById("demographic").style.display  = "none";
+function addLoadEvent(func) {  
+      var oldonload = window.onload;  
+      if (typeof window.onload != 'function') {  
+        window.onload = func;  
+      } else {  
+        window.onload = function() {  
+          if (oldonload) {  
+            oldonload();  
+          }  
+          func();  
+        }  
+      }  
+    }  
+
+	addLoadEvent(function() { 
+	  	radios.sort(function() {return 0.5 - Math.random()});
+     	document.getElementById("sentence").innerHTML = critical_sentense[index[n]];
+		document.getElementById("framing").innerHTML = question_frame[index[n]];
+		document.getElementById("r" + radios[0]).name = "correct"; 
+		document.getElementById("r" + radios[0]).value = correct_answers[index[n]];
+ 		document.getElementById("lbl" + radios[0]).innerHTML = correct_answers[index[n]];
+ 		document.getElementById("r" + radios[1]).name = "related"; 
+     	document.getElementById("r" + radios[1]).value = related_answers[index[n]];
+ 		document.getElementById("lbl" + radios[1]).innerHTML = related_answers[index[n]];
+ 		document.getElementById("r" + radios[2]).name = "unrelated1"; 
+      	document.getElementById("r" + radios[2]).value = unrelated_answers1[index[n]];
+ 		document.getElementById("lbl" + radios[2]).innerHTML = unrelated_answers1[index[n]];
+ 		document.getElementById("r" + radios[3]).name = "unrelated2";
+      	document.getElementById("r" + radios[3]).value = unrelated_answers2[index[n]];
+ 		document.getElementById("lbl" + radios[3]).innerHTML = unrelated_answers2[index[n]];
+		document.getElementById("mturk_form").action = "wout.php";
+		document.getElementById("assignmentId").value = gup("assignmentId");
+
+  	});
+</script>
+</html>

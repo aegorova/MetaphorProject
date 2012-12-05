@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>ПРОСЬБА ОТВЕТИТЬ НА СЛЕДУЮЩИЕ ВОПРОСЫ ДЛЯ ТОГО ЧТОБЫ ЗАКОНЧИТЬ</h1>
+<br>
+1. Сколько вам лет?<br>
+<input id="age" type="text" name="age" value="" /><br />
+<br>
+2. Какой ваш пол?<br>
+<select id="gender" name ="gender">
+	<option value="">Выберете один</option>
+  	<option value="male">мужской</option>
+  	<option value="female">женский</option>
+</select><br>
+<br>
+3. Какой ваш родной язык?<br>
+<select id="language" name ="language">
+	<option value="">Выберете один</option>
+	<option value="russian">Русский</option>
+	<option value="other">Другой</option>
+</select><br>
+<br>
+4. Сколько лет вы разговариваете на языке в вопросе номер 3?<br>
+<input id="yrs_spoken" type="text" name="yrs_spoken" value="" /><br />
+<br>
+5. Вы двуязычный/ая? <br>
+<select id="bilingual" name ="bilingual">
+	<option value="">Выберете один</option>
+  	<option value="yes">Да</option>
+  	<option value="no">Нет</option>
+</select><br>
+<br>
+6. Насколько  свободно вы читаете, пишите и разговариваете на другом языке?<br>
+Шкала от 1 до 5 &#40;где 1 &#61; минимально свободно и 5 &#61; свободно, как на родном&#41;<br>
+<input id="bifluent" type="radio" name="bifluent" value="1" onclick = "on_selection1(this)">1&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="2" onclick = "on_selection1(this)">2&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="3" onclick = "on_selection1(this)">3&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="4" onclick = "on_selection1(this)">4&nbsp;&nbsp;
+<input id="bifluent" type="radio" name="bifluent" value="5" onclick = "on_selection1(this)">5<br>
+<br>
+7. Какой Вы национальности?<br>
+<select id="nationality" name ="nationality">
+	<option value="">Выберете один</option>
+	<option value="russian">Русский/ая</option>
+	<option value="other">Другой национальности</option>
+</select><br>
+<br>
+8. Какова Ваша партийная принадлежность?<br>
+<select id ="politics" name ="politics">
+	<option value="">Выберете один</option>
+	<option value="united">Единая Россия</option>
+	<option value="communist">Коммунистическая партия Российской Федерации</option>
+	<option value="fair">Справедливая Россия</option>
+	<option value="libero-democratic">Либерально-демократическая партия России</option>
+	<option value="other">Другое</option>
+</select><br>
+<br>
+9. Ваши родители родились в России?<br>
+<select id ="nativeparents" name ="nativeparents">
+	<option value="">Выберете один</option>
+  	<option value="yes">Да</option>
+  	<option value="no">Нет</option>
+</select><br>
+<br>
+10. Вы родились в России?<br>
+<select id="bornhere" name ="bornhere">
+	<option value="">Выберете один</option>
+  	<option value="yes">Да</option>
+  	<option value="no">Нет</option>
+</select><br>
+<br>
+11. Где вы живете в данный момент?<br>
+<select id="livein" name ="livein">
+	<option value="">Выберете один</option>
+  	<option value="russia">В России</option>
+  	<option value="other">В другой стране</option>
+</select><br>
+<br>
+12. Сколько лет вы живете в стране вашего теперешнего места жительства?<br>
+<input id="yrs_in_country" type="text" name="yrs_in_country" value="" /><br />
+<br>
+13. Какова ваша этническая принадлежность ?<br>
+<select id ="ethnicity" name ="ethnicity">
+	<option value="">Выберете один</option>
+	<option value="russian">Русские</option>
+	<option value="ukranian">Украинцы</option>
+	<option value="tatar">Татары</option>
+	<option value="chuvash">Чуваши</option>
+	<option value="bashkirs">Башкиры</option>
+	<option value="mordovians">Мордва</option>
+	<option value="other">Другое</option>
+</select><br>
+<br>
+14. Какое ваше религиозное вероисповедание?<br>
+<select id ="religion" name ="religion">
+	<option value="">Выберете один</option>
+	<option value="orthodox">Православие</option>
+	<option value="catholicism">Католицизм</option>
+	<option value="protestant">Протестантизм</option>
+	<option value="islam">Ислам</option>
+	<option value="buddhism">Буддизм</option>	
+	<option value="hinduism">Иудаизм</option>
+	<option value="atheism">Атеизм</option>
+	<option value="other">Другое</option>
+</select><br>
+<br>
+15. Как вы оцениваете ваше экономическое положение по сравнению с другими людьми? <br>
+Шкала от 1 до 5 &#40;где 1 &#61; Значительно хуже, чем у большинства людей и 5 &#61; Значительно лучше, чем у большинства людей&#41;<br>
+<input id= "econ_status" type="radio" name="econ_status" value="1" onclick = "on_selection2(this)">1&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="2" onclick = "on_selection2(this)">2&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="3" onclick = "on_selection2(this)">3&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="4" onclick = "on_selection2(this)">4&nbsp;&nbsp;
+<input id= "econ_status" type="radio" name="econ_status" value="5" onclick = "on_selection2(this)">5<br>
+<br>
+16. Какая у вас профессия?<br>
+<input id="occupation" type="text" name="occupation" value="" /><br />
+<br>
+17. Какой ваш уровень образования?<br>
+<select id="education" name ="education">
+	<option value="">Выберете один</option>
+	<option value="none">Формальное образование отсутствует</option>
+	<option value="elementary">Начальное образование</option>
+	<option value="secondary">Средняя школа</option>
+	<option value="college">Училище</option>
+	<option value="BA/BS">Бакалавр, специалист</option>
+	<option value="graduate">Магистр, кандидат наук, доктор наук</option>
+	<option value="other">Другое</option>
+</select><br>
+<br>
+<center><input type="button" value="ЗАКОНЧИТЬ" onclick="checkInput('demographic')"></center>
+</body>
+</html>

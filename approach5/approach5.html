@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<link rel = "stylesheet" href = "style.css" type = "text/css" media =
+"screen, projection">
+<script src = "csv_parser.js" type = "text/javascript"></script>
+<script src = "shuffle.js" type = "text/javascript"></script>
+<script src="approach5csv.js" type = "text/javascript"></script>
+<script src = "approach5.js" type = "text/javascript"></script>
+<script src = "websiteCode.js" type = "text/javascript"></script>
+
+<center>
+<body onload = "addLoadEvent(function(){})">
+<form id="mturk_form" method="POST" accept-charset="UTF-8" action="">
+<input type="hidden" id="assignmentId" name="assignmentId" value="">
+<input type="hidden" id="results" name="results" value="">
+<div id="ex1">
+
+<b>Please read the Sentence Below:</b>
+<br>  
+<br>
+  <label id="sentence">&nbsp;</label>
+<br>
+<br>
+<b>  <label id="questionFrame">&nbsp;</label> </b>
+<br>
+<br>
+<style type="text/css">
+
+label {
+    float: center;
+    padding: 0 1em;
+    text-align: center;
+}
+
+</style>
+  <div id = "Negative" style = "float:left">Very
+  Negative</div>
+    <div id = "Positive" style =
+  "float:right;text-align:right;">Very Positive</div>
+<br>
+<br>
+  <br>
+  <center>
+  <label for="r1" id="lbl1">1
+  <input type="radio" id="r1" onclick = "on_selection(this)"
+  name="likert" value="1" />
+</label>
+<label for="r2" id="lbl2">2
+<input type="radio" id="r2" onclick = "on_selection(this)" name="likert" value="2"/>
+</label>
+<label for="r3" id="lbl3">3
+<input type="radio" id="r3" onclick = "on_selection(this)" name="likert" value="3"/>
+</label>
+<label for="r4" id="lbl4">4
+  
+<input type="radio" id="r4" onclick = "on_selection(this)" name="likert" value="4"/>
+</label>
+<label for="r5" id="lbl5">5
+<input type="radio" id="r5" onclick = "on_selection(this)" name="likert" value="5"/>
+</label>
+<label for="r6" id="lbl6">6
+<input type="radio" id="r6" onclick = "on_selection(this)" name="likert" value="6"/>
+</label>
+  </center>
+
+
+</form>
+<div id = "number" style = "float:right"> </div>
+
+  </div>
+
+</center>
+</body>
+</html>

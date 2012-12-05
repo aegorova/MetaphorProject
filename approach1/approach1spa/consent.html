@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+function accept_hit(){
+	// Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
+	//
+	if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+	{
+		// If we're previewing, disable the button and give it a helpful message
+		document.getElementById('button').disabled = true;
+		document.getElementById('button').value = "You must ACCEPT the HIT before you can submit the results.";
+	}
+	else{ 
+		window.location="http://polygon.ucsd.edu/MetaphorProject/approach1/approach1spa/instructions.html?assignmentId=" + gup("assignmentId");
+	}
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>UNIVERSITY OF CALIFORNIA – SAN DIEGO</h1>
+<h1>CONSENT TO ACT AS A RESEARCH SUBJECT</h1>
+<br>
+Los Doctores David Barner y Mahesh Srinivasan llevan acabo investigaciones para aprender
+más sobre como las personas usan lenguaje y como piensan sobre el mundo. Se le ha
+pedido a usted que tome parte en esta investigación para proporcionar una medida del uso
+y comprensión de lenguaje por adultos. Habrá aproximadamente 1000 participantes en este
+estudio. Ésta investigación esta financiada por el Ministerio de Defensa de los Estados Unidos
+por medio de la Inteligencia de Actividad de Proyectos de Investigación Avanzada (Intelligence
+Advanced Research Projects Activity).<br>
+<br>
+Si usted decide participar en este estudio, se le puede pedir que lea pasajes y juzgue los
+pasajes descritos. También se le puede pedir que juzgue semejanzas o relaciones entre
+diferentes palabras o ideas como también sobre sus actitudes o sentimientos hacia ellos. Del
+mismo modo, puede que se le muestren imágenes y palabras en la computadora y que se le
+pida que responda a ellas con su teclado y ratón. El estudio tomará entre 10-30 minutos para
+completar.<br>
+<br>
+Su participación en este estudio puede implicar algunos riesgos y molestias. Estos incluyen:
+<br>
+<br>-  Para asegurar anonimato, no recopilaremos ninguna información que se identifique
+con usted más que demográficas aproximadas (p. ej., género/sexo, edad, etc.),
+información sobre su cultura (p. ej., nacionalidad, idioma nativo, etc.) y su experiencia
+con el Ingles. Toda la información que sí recopilemos de usted será identificada con un
+número de sujeto y será referenciado exclusivamente por este número en colección de
+datos y análisis. La base de datos que relaciona el numero de sujeto a un participante
+especifico, la cual esta protegida con contraseña, se mantendrá en a oficina del
+investigador. Si publicaciones resultan de esta investigación, usted no será identificado
+por nombre.
+<br>-  Hay la posibilidad de que usted se aburrirá o se frustrará durante esta tarea. Sin
+embargo, porque éste es un estudio de investigación puede haber riesgos desconocidos
+que son actualmente imprevisibles
+<br>
+<br>En consideración por su tiempo y esfuerzo, usted será elegible para recibir compensación
+monetaria por participar en esta investigación a una tarifa equivalente a $10 por hora.
+No habrá ningún beneficio directo para usted de estos procedimientos. El investigador,
+sin embargo, puede aprender más acerca de como las personas usan el lenguaje. Los
+participantes que está interesados en aprender sobre nuevos hallazgos de este estudio pueden
+visitar nuestra página de internet, que será proveída a petición.<br>
+<br>
+Si usted tiene cualquier otra pregunta perteneciente a sus derechos como sujeto de
+investigación o en el evento de una lesión relacionada con la investigación, puede contactar
+a David Barner al (858) 246-0874 o a Mahesh Srinivasan al (858) 246-0970. Usted también
+puede contactar al Doctor Michael Caligiuri, el Director del Programa de Protección de la
+Investigación Humana (Human Research Protections Program), al (858) 657-5100 para
+más información sobre esto, para preguntar sobre sus derechos, o para reportar problemas
+relacionados con la investigación<br>
+<br>Participación en esta investigación es totalmente voluntaria. Usted puede rehusar participar o
+retirarse en cualquier momento sin consecuencia o pérdida de beneficios. Los investigadores
+también pueden terminar su participación en cualquier momento si así lo deciden, en el mejor
+interés del estudio. Registros de la investigación se conservaran indefinidamente, pero solo
+el personal del laboratorio y oficiales de la Oficina de Protecciones de la Investigación del
+Ejercito Humano (Army Human Research Protections Office) tendrán acceso a ellos. Si decide
+participar se le pedirá ingresar su identificación (ID) de la pagina de Internet: Mechanical Turk.
+Esto es para asegurar que solo esos que lean esta forma y que han decidido participar puedan
+completar las tareas.<br>
+<br>SI DECIDE PARTICIPAR, PULSAR "Aceptar".
+<br>
+<br>
+</div>
+<center><input id="button" type="button" value="Aceptar" onclick='accept_hit()'></center>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir=rtl>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="outline:#000 thin solid; ">
+<h1>روش کار</h1>
+<br>
+ 
+عبارات تمثیلی مفهومی را در غالب مفهومی دیگر بیان می کنند
+<br>
+برای مثال، به این عبارت توجه کنید: درآمد شرکت از آنچه پیش بینی شده بود، بالا تر بود.
+<br>
+تمرکز این عبارت روی مقدار درآمد شرکت است. با این حال، ، مقدار با یک تمثیل، ، با صعود عمودی عنوان شده است
+<br>
+عباراتی در زیر آمده است. در هر عبارت، از شما خواسته می شود تمثیلی را که در عبارت آورده شده است، انتخاب کنید
+<br>
+لطفا هر سوال را پیش از پاسخ دادن، به دقت بخوانید. دگمه ادامه دهید را فشار دهید و شروع کنید.<br>
+<br>
+<br>
+</div>
+<center><input type="button" value="ادامه بدهید"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach1/approach1far/far_surveypage.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>
