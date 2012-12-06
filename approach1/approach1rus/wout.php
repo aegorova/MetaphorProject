@@ -12,8 +12,10 @@
 <body>
 <div id=ex1 style="outline:#000 thin solid; display:table-cell; height:200px; width:450px; text-align:center">
 <?php 
+
 $results_dir = "./results/";
 $post = $_POST["results"];
+
 if ($_POST["assignmentId"] == ""){
 	$theFileName = (string)(time() % 100000000);
 	$theFile = fopen($results_dir . $theFileName . ".csv", "w");
@@ -22,21 +24,16 @@ if ($_POST["assignmentId"] == ""){
 }
 else{
 	$theFileName = $_POST["assignmentId"];
-	$theFile = fopen ($results_dir . $theFileName . ".csv", "w");
+	$theFile = fopen ($theFileName, "w");
 	$results = explode(";", $_POST["results"]);
   	$subjectId = $theFileName;
-	echo($subjectId);
   	echo("<form method='POST' action='http://mturk.com/mturk/externalSubmit'><input type='hidden' name='assignmentId' value='" . $subjectId . "'><input id='submitButton' type='submit' name='Submit' value='Submit'></form>");
 }
-
 $theFields = array("gender", "age", "language", "yrs_spoken", "bilingual", "bifluent", "nationality", "politics", "nativeparents", "bornhere", "livein", "yrs_in_country", "ethnicity", "religion", "occupation", "econ_status", "education");
-
-$txtFile = fopen($result_dir . $fileName . ".txt", "w");
 
 foreach ($theFields as $field) {
 	//  echo($field . ", " . $_POST[$field]);
 	fwrite($theFile, $field . ", " . $_POST[$field] . "\n");
-	fwrite($txtFile, $post);
 }
 
 foreach ($results as $value){
@@ -46,6 +43,7 @@ foreach ($results as $value){
 
 fclose($theFile);
 echo("Thank you for your participation!");
+
 ?>
 </div>
 </body>
