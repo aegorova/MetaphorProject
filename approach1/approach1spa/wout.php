@@ -24,7 +24,7 @@ if ($_POST["assignmentId"] == ""){
 }
 else{
 	$theFileName = $_POST["assignmentId"];
-	$theFile = fopen ($theFileName, "w");
+	$theFile = fopen ($results_dir . $theFileName . ".csv", "w");
 	$results = explode(";", $_POST["results"]);
   	$subjectId = $theFileName;
   	echo("<form method='POST' action='http://mturk.com/mturk/externalSubmit'><input type='hidden' name='assignmentId' value='" . $subjectId . "'><input id='submitButton' type='submit' name='Submit' value='Submit'></form>");
