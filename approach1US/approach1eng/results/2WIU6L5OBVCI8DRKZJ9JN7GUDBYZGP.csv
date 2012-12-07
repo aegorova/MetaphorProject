@@ -1,0 +1,99 @@
+gender, male
+age, 43
+language, english
+yrs_spoken, 43
+bilingual, n
+bifluent, 1
+nationality, us
+politics, democrat
+nativeparents, y
+bornhere, y
+livein, usa
+yrs_in_country, 43
+ethnicity, white
+religion, christianity
+occupation, construction
+econ_status, 4
+education, secondary
+17,Achieving a Goal is Arriving at a Destination,1,0,0,0
+72,Understanding/Knowing is Holding an Object,1,0,0,0
+63,Being in Control is Holding an Object,0,0,1,0
+25,Quantity  is Physical Size,1,0,0,0
+47,Importance is Physical Size,1,0,0,0
+32,Quantity  is Physical Size,1,0,0,0
+52,Desire is a Physical Force,1,0,0,0
+35,Understanding/Knowing is Vision,1,0,0,0
+23,Being in Control is Vertical Positioning,1,0,0,0
+20,Goodness/Badness is Smell,0,0,0,1
+77,Time Periods is An Object in Motion,0,0,0,1
+69,Importance is Physical Size,0,1,0,0
+99,trick question,1,0,0,0
+26,Quantity  is Vertical Elevation,1,0,0,0
+10,Time Periods is A Region in Space,0,1,0,0
+53,Goodness/Badness is Cleanliness,1,0,0,0
+11,Achieving a Goal is Acquiring a Desired Object,1,0,0,0
+39,Happiness is Vertical Elevation,0,0,1,0
+3,Happiness is Brightness,0,0,0,1
+29,Desire is a Physical Force,0,1,0,0
+45,Quantity  is Vertical Elevation,0,1,0,0
+14,Quantity  is Vertical Elevation,0,1,0,0
+66,Importance is Physical Size,1,0,0,0
+42,Happiness is Vertical Elevation,0,0,1,0
+44,Quantity  is Physical Size,1,0,0,0
+79,Importance is Physical Size,0,0,0,1
+9,Time Periods is An Object in Motion,0,0,1,0
+50,Activity is Being Asleep/Awake,0,0,0,1
+18,Happiness is Vertical Elevation,1,0,0,0
+55,Achieving a Goal is Acquiring a Desired Object,0,1,0,0
+8,Activity is Being Alive/Dead,0,1,0,0
+68,Importance is Centrality in Space,0,0,0,1
+38,Desire is Hunger,1,0,0,0
+41,Happiness is Brightness,0,0,1,0
+36,Happiness is Brightness,0,1,0,0
+70,Achieving a Goal is Arriving at a Destination,0,1,0,0
+48,Being in Control is Holding an Object,0,0,0,1
+13,Time Periods is A Region in Space,0,0,0,1
+62,Being in Control is Vertical Positioning,1,0,0,0
+33,Quantity  is Vertical Elevation,1,0,0,0
+16,Achieving a Goal is Acquiring a Desired Object,1,0,0,0
+30,Understanding/Knowing is Holding an Object,0,1,0,0
+40,Activity is Being Alive/Dead,0,0,1,0
+58,Activity is Being Alive/Dead,0,1,0,0
+28,Desire is Hunger,1,0,0,0
+54,Achieving a Goal is Arriving at a Destination,0,1,0,0
+74,Goodness/Badness is Smell,1,0,0,0
+49,Being in Control is Vertical Positioning,0,0,0,1
+1,Goodness/Badness is Smell,0,0,0,1
+71,Achieving a Goal is Acquiring a Desired Object,1,0,0,0
+46,Understanding/Knowing is Seeing something,1,0,0,0
+24,Importance is Centrality in Space,0,0,0,1
+73,Goodness/Badness is Cleanliness,1,0,0,0
+21,Goodness/Badness is Cleanliness,0,0,1,0
+5,Time Periods is A Region in Space,0,1,0,0
+80,Importance is Centrality in Space,0,0,0,1
+12,Time Periods is An Object in Motion,0,1,0,0
+65,Goodness/Badness is Cleanliness,1,0,0,0
+34,Understanding/Knowing is Holding an Object,0,1,0,0
+27,Activity is Being Asleep/Awake,0,0,1,0
+37,Desire is a Physical Force,0,0,1,0
+57,Being in Control is Holding an Object,1,0,0,0
+67,Importance is Centrality in Space,0,0,1,0
+43,Achieving a Goal is Arriving at a Destination,1,0,0,0
+59,Activity is Being Asleep/Awake,0,1,0,0
+75,Understanding/Knowing is Seeing something,1,0,0,0
+6,Time Periods is An Object in Motion,1,0,0,0
+61,Desire is Hunger,0,1,0,0
+4,Activity is Being Alive/Dead,0,1,0,0
+22,Being in Control is Holding an Object,0,1,0,0
+15,Quantity  is Physical Size,1,0,0,0
+51,Desire is Hunger,0,1,0,0
+7,Activity is Being Asleep/Awake,0,1,0,0
+76,Understanding/Knowing is Holding an Object,1,0,0,0
+31,Understanding/Knowing is Seeing something,1,0,0,0
+60,Desire is a Physical Force,1,0,0,0
+99,trick question,1,0,0,0
+64,Goodness/Badness is Smell,1,0,0,0
+2,Happiness is Vertical Elevation,1,0,0,0
+56,Being in Control is Vertical Positioning,1,0,0,0
+78,Time Periods is A Region in Space,1,0,0,0
+19,Happiness is Brightness,0,0,0,1

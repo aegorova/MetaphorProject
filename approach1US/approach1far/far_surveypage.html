@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<html dir=rtl>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="variables1spa.js" type="text/javascript"></script>
+<script src="variables1far.js" type="text/javascript"></script>
 <script>
 var n = 0;
 var radios = ["0","1","2","3"];
@@ -36,7 +36,7 @@ function checkInput(id){
 	|| (document.getElementById("ethnicity").value == "")
 	|| (document.getElementById("religion").value == "")
 	|| (document.getElementById("occupation").value == "")
-	|| (document.getElementById("education").value == "")){alert("Parte de este formulario no ha sido llenado, por favor revise de nuevo todas las preguntas y termine.");}
+	|| (document.getElementById("education").value == "")){alert("بخشهایی از این فرم هنوز تکمیل نشده است. لطفا سوالات را دوباره مرور کنید و فرم را کامل نمایید ");}
 	else {
        	document.getElementById('mturk_form').submit();
 		}
@@ -102,7 +102,7 @@ function on_timeout(button) {
     else {;
    		radios.sort(function() {return 0.5 - Math.random()});
      	document.getElementById("sentence").innerHTML = critical_sentense[index[n]];
-   		document.getElementById("framing").innerHTML = question_frame[index[n]];
+   		document.getElementById("framing").innerHTML = question_frame[index[n]] + ":";
    		document.getElementById("r" + radios[0]).name = "correct";
         document.getElementById("r" + radios[0]).value = correct_answers[index[n]];
    		document.getElementById("lbl" + radios[0]).innerHTML = correct_answers[index[n]];
@@ -140,143 +140,143 @@ function on_selection(button) {
 <input type="hidden" id="results" name="results" value="">
 
 <div id="demographic" >
-<h1> PORFAVOR RESPONDA LAS SIGUIENTES PREGUNTAS ANTES DE TERMINAR</h1>
+<h1>لطفا به عنوان آخرین مرحله، به سوالات زیر  پاسخ  دهید </h1>
 <br>
-1. &#191; Qu&#233; edad tiene?<br>
+.1&nbsp;&nbsp;سن؟ <br>
 <input id="age" type="text" name="age" value="" /><br />
 <br>
-2. &#191; Cu&#225;l es su g&#233;nero/sexo?
+.2&nbsp;&nbsp;جنسیت؟<br>
 <select id="gender" name ="gender">
-    <option value="">Seleccione Uno</option>
-      <option value="male">Masculino</option>
-      <option value="female">Femenino</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="male">مرد</option>
+    <option value="female">زن</option>
 </select><br>
 <br>
-3. &#191; Cu&#225;l es su idioma nativo?
-<select id ="language" name ="language">
-    <option value="">Seleccione Uno</option>
-    <option value="english">Ingl&#233;s</option>
-    <option value="other">Otro</option>
+.3&nbsp;&nbsp; زبان مادری شما چیست؟<br>
+<select id="language" name ="language">
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="farsi">فارسی</option>
+    <option value="other">غیره</option>
 </select><br>
 <br>
-4. &#191; Por cuantos a&#241;os ha hablado Espa&#241;ol? <br>
+.4&nbsp;&nbsp; چند سال به این زبان  گفتگو کرده اید؟<br>
 <input id="yrs_spoken" type="text" name="yrs_spoken" value="" /><br />
 <br>
-5. &#191;Es usted biling&#252;e? 
+.5&nbsp;&nbsp; آیا شما دو زبانه هستید؟<br>
 <input type="hidden" id="bifluent" name="bifluent" value="">
 <select id="bilingual" name ="bilingual">
-	<option value="">Seleccione Uno</option>
-    <option value="y">S&#237;</option>
-    <option value="n">No</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="yes">بله</option>
+    <option value="no">خیر</option>
 </select><br>
 <br>
-6. &#191;Qu&#233; fluido es usted en hablar, escribir, y leer su segundo idioma?<br>
-&#40;con 1 &#61; no hay fluidez y 5 &#61; nivel nativo de fluidez&#41;<br>
-<input id="bifluent" type="radio" name="bifluent" value="1" onclick = "on_selection1(this)">&nbsp;1
-<input id="bifluent" type="radio" name="bifluent" value="2" onclick = "on_selection1(this)">&nbsp;2
-<input id="bifluent" type="radio" name="bifluent" value="3" onclick = "on_selection1(this)">&nbsp;3
-<input id="bifluent" type="radio" name="bifluent" value="4" onclick = "on_selection1(this)">&nbsp;4
-<input id="bifluent" type="radio" name="bifluent" value="5" onclick = "on_selection1(this)">&nbsp;5<br>
+.6&nbsp;&nbsp;  چقدر در صحبت کردن، خواندن، و نوشتن زبان خود مهارت دارید؟<br>
+(شماره 5= اصلا به زبان تسلط ندارد، شماره 1= مانند زبان مادری تسلط دارد )<br>
+<input type="radio" id="bifluent" name="bifluent" value="1" onclick = "on_selection1(this)">&nbsp;1
+<input type="radio" id="bifluent" name="bifluent" value="2" onclick = "on_selection1(this)">&nbsp;2
+<input type="radio" id="bifluent" name="bifluent" value="3" onclick = "on_selection1(this)">&nbsp;3
+<input type="radio" id="bifluent" name="bifluent" value="4" onclick = "on_selection1(this)">&nbsp;4
+<input type="radio" id="bifluent" name="bifluent" value="5" onclick = "on_selection1(this)">&nbsp;5<br>
 <br>
-7. &#191;Cu&#225;l es su nacionalidad?<br>
+.7&nbsp;&nbsp; ملیت شما چیست؟<br>
 <select id="nationality" name ="nationality">
-    <option value="">Seleccione Una</option>
-    <option value="us">Americano</option>
-    <option value="other">Otro</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="us">آمریکایی</option>
+    <option value="other">غیره</option>
 </select><br>
 <br>
-8. &#191;Cu&#225;les son sus afiliaciones pol&#237;ticas?<br>
-<select id ="politics" name ="politics">
-    <option value="">Seleccione Uno</option>
-    <option value="PRI">Partido Revolucionario Institucional</option>
-    <option value="PAN"> Partido Acci&#243;n Nacional </option>
-    <option value="PRD"> Partido de la Revoluci&#243;n Democr&#225;tica </option>
-    <option value="PVEM"> Partido Verde Ecologista de M&#233;xico </option>
-    <option value="MC">Movimiento Ciudadano</option>
-    <option value="otro">Otro</option>
+.8&nbsp;&nbsp; آبه کدام گروه  سیاسی زیر وابستگی دارید؟<br>
+<select id="politics" name ="politics">
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="PMOI">سازمان مجاهدین خلق ایران</option>
+    <option value="KDPI">حزب دموکرات کردستان ایران</option>
+    <option value="HAKA">حزب کونیست ایران</option>
+    <option value="Reform Front">اصلاح طلبان</option>
+    <option value="Green Movement"> جنبش سبز</option>
+    <option value="other">غیره</option>
 </select><br>
 <br>
-9. &#191;Nacieron sus padres en M&#233;xico?<br>
+.9&nbsp;&nbsp; آیا پدر و مادر شما در آمریکا متولد شده اند؟<br>
 <select id="nativeparents" name ="nativeparents">
-    <option value="">Seleccione Uno</option>
-      <option value="y">S&#237;</option>
-      <option value="n">No</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="yes">بله</option>
+    <option value="no">خیر</option>
 </select><br>
 <br>
-10. &#191;Naci&#243; usted en M&#233;xico?<br>
+.10&nbsp;&nbsp; ایا شما در آمریکا متولد شده اید؟<br>
 <select id="bornhere" name ="bornhere">
-    <option value="">Seleccione Uno</option>
-      <option value="y">S&#237;</option>
-      <option value="n">No</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="yes">بله</option>
+    <option value="nno">خیر</option>
 </select><br>
 <br>
-11. &#191;En d&#243;nde vive usted actualmente?<br>
+.11&nbsp;&nbsp;در حال حاضر کجا زندگی می کنید؟<br>
 <select id="livein" name ="livein">
-    <option value="">Seleccione Uno</option>
-      <option value="usa">USA</option>
-      <option value="other">Otro</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="usa">آمریکا</option>
+    <option value="other">غیره</option>
 </select><br>
 <br>
-12. &#191;Por cuantos a&#241;os ha vivido usted en su pa&#237;s actual?<br>
+.12&nbsp;&nbsp; چند سال است در این کشور زندگی می کنید ؟<br>
 <input id="yrs_in_country" type="text" name="yrs_in_country" value="" /><br />
 <br>
-13. &#191;Cu&#225;l es su identidad &#233;tnica?<br>
+.13&nbsp;&nbsp; قومیت شما چیست ؟<br>
 <select id="ethnicity" name ="ethnicity">
-    <option value="">Seleccione Uno</option>
-    <option value="Blanco">Americano Blanco</option>
-    <option value="Mestizo">Mestizo</option>
-    <option value="Indigena">Indigena (p.ej., Nahua, Maya, Pur&#233;pecha, Zapoteco, etc.)</option>
-    <option value="hispano">Hispano y Latinoamericano</option>
-    <option value="otro">Otro</option>
+    <option value="">یکی را انتخاب کنید</option>
+    <option value="turk">آذری</option>
+    <option value="kurd">کرد</option>
+    <option value="arab">خوزستانی عرب</option>
+    <option value="balooch">بلوچ</option>
+    <option value="other">غیره</option>
 </select><br>
 <br>
-14. &#191;Cu&#225;l es su formaci&#243;n religiosa <br>
+.14&nbsp;&nbsp; مذهب شما چیست ؟<br>
 <select id="religion" name ="religion">
-    <option value="">Seleccione Una</option>
-    <option value="christian">Cristianismo</option>
-    <option value="catholicism">Catolicismo</option>
-    <option value="judaism"> Juda&#237;smo </option>
-    <option value="protestantes">Protestante</option>
-    <option value="agnostic"> Agn&#243;stico </option>    
-    <option value="atheism">Ate&#237;smo</option>    
-    <option value="other">Otro</option>
+    <option value="">کی را انتخاب کنید</option>
+    <option value="christianity">مسیحیت</option>
+    <option value="islam">اسلام</option>
+    <option value="judaism">یهودیت</option>
+    <option value="Bahaii"> بهاییت </option>
+    <option value="Zorostrian">زرتشتی</option>    
+    <option value="atheism">لا مذهب</option>    
+    <option value="other">غیره</option>
 </select><br>
 <br>
-15. &#191;C&#243;mo clasificar&#237;a usted su situaci&#243;n econ&#243;mica en comparaci&#243;n a otras personas?<br>
-&#40;Con 1 &#61; Mucho m&#225;s inferior que la mayor&#237;a de las personas y 5 &#61; Mucho m&#225;s alta que la mayor&#237;a de las personas&#41;<br>
+.15&nbsp;&nbsp; شرایط اقتصادی خود را در مقایسه با دیگران چگونه ارزیابی می کنید ؟<br>
+&#40;شماره 5= بسیار پایین تر از اغلب مردم، شماره 1= بسیار بالا تر از اغلب مردم &nbsp;&#41;<br>
 <input type="radio" id="econ_status" name="econ_status" value="1" onclick = "on_selection2(this)">&nbsp;1
 <input type="radio" id="econ_status" name="econ_status" value="2" onclick = "on_selection2(this)">&nbsp;2
 <input type="radio" id="econ_status" name="econ_status" value="3" onclick = "on_selection2(this)">&nbsp;3
 <input type="radio" id="econ_status" name="econ_status" value="4" onclick = "on_selection2(this)">&nbsp;4
 <input type="radio" id="econ_status" name="econ_status" value="5" onclick = "on_selection2(this)">&nbsp;5<br>
 <br>
-16. &#191;Cu&#225;l es su ocupaci&#243;n/profesi&#243;n?<br>
+.16&nbsp;&nbsp; شغل شما چیست ؟<br>
 <input id="occupation" type="text" name="occupation" value="" /><br />
 <br>
-17. &#191;Cu&#225;l es su nivel de educaci&#243;n?
+.17&nbsp;&nbsp; میزان تحصیلات شما چقدر است ؟<br>
 <select id="education" name ="education">
-    <option value="">Seleccione Uno</option>
-    <option value="none"> Sin educaci&#243;n formal </option>
-    <option value="primary">Primaria</option>
-    <option value="secondary">Secundaria/Preparatoria</option>
-    <option value="university">Algo de educaci&#243;n superior</option>
-    <option value="BA/BS">Licenciatura</option>
-    <option value="graduate">Maestr&#237;a o Doctorado</option>
-    <option value="other">Otro</option>
+    <option value="">کی را انتخاب کنید</option>
+    <option value="none">تحصیلات آکادمیک ندارد</option>
+    <option value="elementary">ابتدایی</option>
+    <option value="secondary">دیپلم</option>
+    <option value="college">فوق دیپلم</option>
+    <option value="BA/BS">لیسانس</option>
+    <option value="graduate">فوق یا دکترا &#40;example&#58; M.S., Ph.D.&#41;</option>
+    <option value="other">غیره</option>
 </select><br>
-<br>
-<center><input type="button" value="TERMINAR" onclick="checkInput('demographic')"></center>
-</body>
+<center><input type="button" value="موافقت می شود" onclick="checkInput('demographic')"></center>
 </div>
 
 <center>
-<div id="survey" style="outline:#000 thin solid; display:table-cell; height:200px; width:450px; text-align:left">
-	<b>Por favor lea la siguiente frase:</b><br>
+<div id="survey" style="outline:#000 thin solid; display:table-cell; height:200px; width:450px; text-align:right">
+	<b>
+	لطفا جمله زیر را بخوانید
+	</b>
 	<br>
-	<label id="sentence">&nbsp;</label><br>
+	<label id="sentence"><b>&nbsp;</b></label>
 	<br>
 	<b><label id="framing">&nbsp;</label></b>
-	<br>
+	<br>	
 	<input type="radio" id="r0" onclick = "on_selection(this)" name="" value=""/>
 	<label for="r0" id="lbl0">&nbsp;</label>
 	<br>

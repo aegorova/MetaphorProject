@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>Instrucciones:</h1>
+<br>
+Expresiones metafóricas describen un concepto en términos de otro.
+<br>
+Por ejemplo, considere la siguiente expresión: “Los ingresos de la compañía fueron más altos de lo previsto.”
+<br>
+El enfoque de esta expresión es la cantidad de los ingresos de la corporación. Sin embargo, cantidad se esta describiendo metafóricamente, en términos de elevación vertical.
+<br>
+A continuación hay una serie de expresiones. En cada expresión, se le pedirá que escoja la metáfora que se esta utilizando en la expresión.<br>
+<br>
+Por favor lea cada pregunta cuidadosamente antes de responder. ¡Oprima “Continuar” para comenzar!  
+<br>
+</div>
+
+<center><input type="button" value="Continuar"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach1US/approach1spa/spa_surveypage.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>INSTRUCTIONS: PLEASE READ THE FOLLOWING BEFORE PROCEEDING</h1>
+<br>
+Metaphorical expressions describe one concept in terms of another.
+<br>
+For example, consider the following expression: "The corporation’s revenue was higher than projected"
+<br>
+The focus of this expression is on the quantity of the corporation’s revenue. However, quantity is being described metaphorically, in terms of vertical elevation.
+<br>
+Below are a series of expressions. In each expression, you will be asked to choose the metaphor that is being used in the expression.  
+<br>
+Please read each of the questions carefully before responding. Press “Continue” to begin!
+<br>
+<br>
+CLICK "Continue" TO START
+<br>
+</div>
+
+<center><input type="button" value="Continue"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach1US/approach1eng/eng_surveypage.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>
