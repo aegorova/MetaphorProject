@@ -1,0 +1,2 @@
+//UniqueID	PassageID	Passage	MetaphorType	Completion	CompletionType	(set?)
+var theCSVFile = ["UniqueID,PassageID,Passage,MetaphorType,Completion,CompletionType\n111,1,This is passage1,1,This is competion1,1\n122,1,This is passage1,2,This is competion2,2\n111,3,This is passage1,1,This is competion3,3\n144,1,This is passage1,4,This is competion4,4\n211,2,This is passage2,1,This is competion1,1\n222,2,This is passage2,2,This is competion2,2\n233,2,This is passage2,3,This is competion3,3\n244,2,This is passage2,4,This is competion4,4"];
