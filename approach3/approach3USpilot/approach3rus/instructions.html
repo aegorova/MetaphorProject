@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>Инструкция:</h1>
+<br>
+По каждому вопросу вы прочитаете отрывок. После чего, вам покажут два предложения. 
+<br>
+Ваша задача заключается в том, чтобы определить насколько хорошо каждое из этих предложений завершает данный отрывок.
+<br>
+Пожалуйста, обозначьте вашу оценку по шкале от 1 (завершает отрывок очень плохо) до 5 (завершает отрывок очень хорошо).
+<br>
+Пожалуйста, внимательно прочитайте каждый из отрывков и предложений перед тем, как отвечать. Нажмите  “Продолжить”,чтобы начать!
+<br>
+</div>
+
+<center><input type="button" value="Продолжить"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach3/approach3USpilot/approach3rus/approach3.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>

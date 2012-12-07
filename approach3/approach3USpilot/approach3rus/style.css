@@ -1,0 +1,8 @@
+#ex1{
+outline:#000 thin solid;
+display:table-cell;
+width:600px;
+text-align:left;
+font-size:18px;
+font-family:Arial, Helvetica, sans-serif
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+function accept_hit(){
+	// Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
+	//
+	if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+	{
+		// If we're previewing, disable the button and give it a helpful message
+		document.getElementById('button').disabled = true;
+		document.getElementById('button').value = "You must ACCEPT the HIT before you can submit the results.";
+	}
+	else{ 
+		window.location="http://polygon.ucsd.edu/MetaphorProject/approach3/approach3USpilot/approach3eng/instructions.html?assignmentId=" + gup("assignmentId");
+	}
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>UNIVERSITY OF CALIFORNIA - SAN DIEGO</h1>
+<h1>CONSENT TO ACT AS A RESEARCH SUBJECT</h1>
+<br>
+David Barner, Ph.D., and Mahesh Srinivasan, Ph.D., conduct research to find out more about how people use language and think about the world. You have been asked to take part in this research to provide a measure of adults’ language use and comprehension. There will be approximately 1000 participants in this study. This research is funded by the U.S. Department of Defense through the Intelligence Advanced Research Projects Activity.<br>
+If you agree to participate in this study, you may be asked to read passages and make judgments about the passages described. You may also be asked to make judgments about the similarities or relations between different words and ideas as well as your attitudes or feelings toward them. Similarly, you may also be shown images and words on the computer and be asked to respond to them with your keyboard and mouse. The study will take 10-30 minutes to complete.
+Participation in this study may involve some added risks and discomforts. These include:
+<br>
+<br>-	To ensure anonymity, we will not collect any identifying information from you beyond rough demographics (e.g., gender, age, etc.), information about your culture (e.g., nationality, native language, etc.), and experience with English. All information that we do collect from you will be identified with a subject number, and will be referenced exclusively by this number in data collection and analyses. The database that relates the subject number to a specific participant, which is password-protected, will be maintained in the researcher’s office. If publications result from this research, you will not be identified by name.
+<br>-	There is a potential risk that you will get bored or frustrated during this task. However, because this is an investigational study there may be some unknown risks that are currently unforeseeable. 
+<br>
+<br>In consideration of your time and effort, you will be eligible to receive monetary compensation for participating in this research at a rate equivalent to $10 per hour. 
+There will not be any direct benefit to you from these procedures.  The investigator, however, may learn more about how people use language.  Participants who are interested in learning about new findings from this study can visit our website, which will be provided upon request.
+If you have any other questions pertaining to your rights as a research subject or in the event of a research related injury, you may reach David Barner at (858) 246-0874 or Mahesh Srinivasan at (858) 246-0970. You may also contact Michael Caligiuri, Ph.D., the Director of the Human Research Protections Program, at (858) 657-5100 for more information about this, to inquire about your rights, or to report research-related problems.
+<br>
+<br>Participation in this research is entirely voluntary. You may refuse to participate or withdraw at any time without penalty or loss of benefits. The researchers may also terminate participation at any time if they choose to do so in the best interest of the study. Research records will be kept indefinitely, but only lab personnel and officials of the Army Human Research Protections Office will have access to them. If you agree to participate you will be asked to enter your Mechanical Turk ID. This is to ensure that only those who have read this form and agreed to participate complete the tasks.
+<br>
+<br>IF YOU AGREE TO PARTICIPATE, PRESS "Accept".
+<br>
+</div>
+<center><input id="button" type="button" value="Accept" onclick='accept_hit()'></center>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>Instrucciones:</h1>
+<br>
+Para cada pregunta usted leerá un pasaje de texto. Después, se le mostraran dos oraciones. Su tarea consiste en indicar que tan bien estas oraciones completan el pasaje.
+<br>
+Por favor indique su calificación en una escala del 1 (completa el pasaje muy mal) al 5 (completa el pasaje muy bien).
+<br>
+Por favor lea cada pasaje y oración cuidadosamente antes de responder. ¡Oprima “Continuar” para comenzar!
+<br>
+</div>
+
+<center><input type="button" value="Continue"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach3/approach3USpilot/approach3spa/approach3.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>

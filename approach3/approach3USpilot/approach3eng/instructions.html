@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"></script>
+
+<style type="text/css">
+#ex1
+{
+border: solid;
+}
+</style>
+
+<script>
+function display()
+{
+	document.getElementById("ex1").style.margin="20px";
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+
+<body onload = "display()">
+<div id = "ex1" style="border-style:solid">
+<h1>Instructions:</h1>
+<br>
+For each question, you will read a passage. Then, you will be shown two sentences. Your job is to indicate how well each of these sentences complete the passage.
+<br>
+Please indicate your ratings on a 1 (completes the passage very poorly) to 5 (completes the passage very well) scale.
+<br>
+Please read each of the passages and sentences carefully before responding. Press “Continue” to begin!
+<br>
+</div>
+
+<center><input type="button" value="Continue"
+onclick='window.location="http://polygon.ucsd.edu/MetaphorProject/approach3/approach3USpilot/approach3eng/approach3.html?assignmentId=" + gup("assignmentId")'></center>
+</body>
+</html>
